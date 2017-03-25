@@ -9,7 +9,7 @@ exports.run = (client, message) => {
       for(var key in body.data.children){
         var url = body.data.children[key].data.id;
         var title = body.data.children[key].data.title;
-        postCount++
+        postCount++;
         message.channel.sendMessage(`### **R/TREES POST: ${postCount}** ###\nTITLE: ${title}\nURL: https://redd.it/${url}`);
       }
     }

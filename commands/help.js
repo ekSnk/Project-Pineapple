@@ -1,4 +1,4 @@
-exports.run = (client, message, args) => {
+exports.run = (client, message) => {
   let member = message.author.id;
-  client.users.get(member).sendMessage("EMBED")
+  client.users.get(member).sendMessage("EMBED");
 };
