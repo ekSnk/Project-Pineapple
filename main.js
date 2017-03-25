@@ -5,8 +5,8 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-const fs = require("fs");
-let points = JSON.parse(fs.readFileSync("./levelsys/levels.json", "utf8"));
+//const fs = require("fs");
+//let points = JSON.parse(fs.readFileSync("./levelsys/levels.json", "utf8"));
 
 const secrets = require("./lib/secrets.json");
 
@@ -20,27 +20,23 @@ client.on("message", message => {
   if (!message.content.startsWith(secrets.BOT_PREFIX)) return;
   if (message.author.bot) return;
 
-  if (!points[message.author.id]) points[message.author.id] = {
-    points: 0,
-    level: 0
-  };
-  let userData = points[message.author.id];
-  userData.points++;
+//  if (!points[message.author.id]) points[message.author.id] = {
+//    points: 0,
+//    level: 0
+//  };
+//  let userData = points[message.author.id];
+//  userData.points++;
 
-  let curLevel = Math.floor(0.1 * Math.sqrt(userData.points));
-  if (curLevel > userData.level) {
+//  let curLevel = Math.floor(0.1 * Math.sqrt(userData.points));
+//  if (curLevel > userData.level) {
     // Level up!
-    userData.level = curLevel;
-    message.reply(`You've leveled up to level **${curLevel}**! Ain't that dandy?`);
-  }
+//    userData.level = curLevel;
+//    message.reply(`You've leveled up to level **${curLevel}**! Ain't that dandy?`);
+//  }
 
-  if (!message.content.startsWith(secrets.BOT_PREFIX + "level")) {
-    message.reply(`You are currently level ${userData.level}, with ${userData.points} points.`);
-  }
-
-  fs.writeFile('./levelsys/levels.json', JSON.stringify(points), (err) =>{
-    if (err) console.error(err);
-  });
+//  fs.writeFile('./levelsys/levels.json', JSON.stringify(points), (err) =>{
+//    if (err) console.error(err);
+//  });
 
   let command = message.content.split(" ")[0];
   command = command.slice(secrets.BOT_PREFIX.length);
