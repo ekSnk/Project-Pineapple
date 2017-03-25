@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
     key: secrets.YT_KEY
   };
 
-  search(args, opts, function(err, results){
+  search(args.join(" "), opts, function(err, results){
     if (err) return console.log(err);
     message.channel.sendMessage(results[0].link);
   });

@@ -42,6 +42,7 @@ client.on("message", message => {
   command = command.slice(secrets.BOT_PREFIX.length);
 
   let args = message.content.split(" ").slice(1);
+
   try {
     let commandFile = require(`./commands/${command}.js`);
     commandFile.run(client, message, args);
