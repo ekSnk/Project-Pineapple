@@ -21,6 +21,8 @@ exports.run = (client, message) => {
   .addField('uhm','Produces this help document.')
   .addField('ping','Simple test command to check that the bot is alive.')
   .addField('purge','provide a number(max of 100) to delete that ammount of messages from chat.')
+  .addField('suggestion','Sends Skenk a message with your suggestion.')
+  .addField('bug', 'Send Skenk your bug report.')
   //Fun commands
   .addField('catfact','Grabs you a random cat fact.')
   .addField('cointoss','Tosses a coin for you')
