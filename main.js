@@ -9,11 +9,13 @@ const client = new Discord.Client();
 //let points = JSON.parse(fs.readFileSync("./levelsys/levels.json", "utf8"));
 
 const secrets = require("./lib/secrets.json");
+const setGames = require("./lib/setGames.json");
 
 client.login(secrets.CLIENT_TOKEN);
 
 client.on("ready",() => {
   console.log("Client has been logged in");
+  client.user.setGame(setGames[Math.floor(Math.random()*setGames.length)]);
 });
 
 client.on("message", message => {
