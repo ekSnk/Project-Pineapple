@@ -23,10 +23,11 @@ exports.run = (client, message) => {
   .addField('purge','provide a number(max of 100) to delete that ammount of messages from chat.')
   .addField('suggestion','Sends Skenk a message with your suggestion.')
   .addField('bug', 'Send Skenk your bug report.')
+  .addField('github', 'Get a link to the github the bot is being developed on.')
   //Fun commands
   .addField('catfact','Grabs you a random cat fact.')
   .addField('cointoss','Tosses a coin for you')
-  .addField('Provide the link to a youtube video and the bot will play it for you ... at full volume')
+  .addField('play','Provide the link to a youtube video and the bot will play it for you ... at full volume')
   .addField('roll','The bot will roll 2 dice for you and give you the result.')
   .addField('troll','This command probably doesnt do anything...')
   .addField('trump','Bring forth the grandmaster trump.')
