@@ -38,6 +38,7 @@ exports.run = (client, message) => {
   .addField('imbaked','Randomly gives you a link to check whilst baked.')
   .addField('strain','Provide a strain name and get 5 results.')
   .addField('trees','This will give you the first 5 links from the frontpage of the /r/trees subreddit.')
+  .addField('helprolling','Links you to a handy guide for beginners of joint rolling.')
   /*
    * Inline fields may not display as inline if the thumbnail and/or image is too big.
    */
