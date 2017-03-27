@@ -33,7 +33,9 @@ exports.run = (client, message) => {
   .addField('trump','Bring forth the grandmaster trump.')
   .addField('yt','Searches youtube and gives you the top link for the search terms')
   .addField('rhot', 'Provide a subreddit and get the 5 hottest posts from it.')
-  .addField('liveesport', 'Provides a collection of streams to watch esports on')
+  .addField('liveesport', 'Provides a collection of streams to watch esports on.')
+  .addField('urban', 'Give it a word and get the urban dictionary definition.')
+  .addField('randomurban', 'Provides information on a random word from urban dictionary.')
   //Cannabis commands
   .addField('420code','Provides you the link to an excellent audio version of the 420code publication.')
   .addField('chillntoke','Links you to the joint youtube experience and chatroom treesradio.')
