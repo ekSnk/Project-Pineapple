@@ -1,0 +1,40 @@
+{
+  "name": "project-pineapple",
+  "version": "1.0.0",
+  "description": "A discord bot with a few commands",
+  "main": "main.js",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "discord.js": "^11.0.0",
+    "express": "^4.15.2",
+    "ffmpeg": "^0.0.4",
+    "node-gyp": "^3.6.0",
+    "node-opus": "^0.2.4",
+    "node-twitchtv": "^0.0.4",
+    "rebuild": "^0.1.2",
+    "request": "^2.81.0",
+    "sqlite": "^2.5.0",
+    "steam-web": "^0.4.0",
+    "urban": "^0.3.1",
+    "youtube-search": "^1.0.9",
+    "ytdl-core": "^0.10.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": ">ping"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ekSnk/Project-Pineapple.git"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "Skenk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ekSnk/Project-Pineapple/issues"
+  },
+  "homepage": "https://github.com/ekSnk/Project-Pineapple#readme"
+}
