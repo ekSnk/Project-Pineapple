@@ -5,6 +5,9 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
+const sql = require('sqlite');
+sql.open('./levelsys/levels.sqlite');
+
 //const fs = require("fs");
 //let points = JSON.parse(fs.readFileSync("./levelsys/levels.json", "utf8"));
 
@@ -21,6 +24,26 @@ client.on("ready",() => {
 client.on("message", message => {
   if (!message.content.startsWith(secrets.BOT_PREFIX)) return;
   if (message.author.bot) return;
+  if (message.channel.type == 'dm') return;//Bot ignores messages sent via DM
+
+  sql.get(`SELECT * FROM levels WHERE userId ='${message.author.id}'`).then(row =>{
+    if(!row){
+      sql.run('INSERT INTO levels (userId, exp, level) VALUES (?,?,?)', [message.author.id, 1, 0]);
+    } else {
+      let curLevel = Math.floor(0.1 * Math.sqrt(row.exp + 1));
+      if (curLevel > row.level) {
+        row.level = curLevel;
+        sql.run(`UPDATE levels SET exp = ${row.exp + 1}, level = ${row.level} WHERE userId ${message.author.id}`);
+        message.reply(`You've leveld up to level **${curLevel}**`);
+      }
+      sql.run(`UPDATE levels SET exp = ${row.exp + 1} WHERE userId = ${message.author.id}`);
+    }
+  }).catch(() =>{
+    console.error;
+    sql.run('CREATE TABLE IF NOT EXISTS levels (userId TEXT, exp INTEGER, level INTEGER)').then(() => {
+      sql.run('INSERT INTO levels (userId,exp,level) VALUES (?,?,?)', [message.author.id, 1, 0]);
+    });
+  });
 
 //  if (!points[message.author.id]) points[message.author.id] = {
 //    points: 0,

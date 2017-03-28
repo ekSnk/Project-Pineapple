@@ -24,6 +24,7 @@ exports.run = (client, message) => {
   .addField('suggestion','Sends Skenk a message with your suggestion.')
   .addField('bug', 'Send Skenk your bug report.')
   .addField('github', 'Get a link to the github the bot is being developed on.')
+  .addField('userinfo','Sends the user stats from the level system')
   //Fun commands
   .addField('catfact','Grabs you a random cat fact.')
   .addField('cointoss','Tosses a coin for you')
@@ -52,6 +53,6 @@ exports.run = (client, message) => {
    //Functional commands
   .addField('\u200b', '\u200b', true);
 
-  message.channel.reply("Please see your PM's for the help guide.");
+  message.reply("Please see your PM's for the help guide.");
   client.users.get(member).sendEmbed(embed);
 };
