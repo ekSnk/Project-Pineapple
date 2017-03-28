@@ -8,9 +8,6 @@ const client = new Discord.Client();
 const sql = require('sqlite');
 sql.open('./levelsys/levels.sqlite');
 
-//const fs = require("fs");
-//let points = JSON.parse(fs.readFileSync("./levelsys/levels.json", "utf8"));
-
 const secrets = require("./lib/secrets.json");
 const setGames = require("./lib/setGames.json");
 
@@ -44,24 +41,6 @@ client.on("message", message => {
       sql.run('INSERT INTO levels (userId,exp,level) VALUES (?,?,?)', [message.author.id, 1, 0]);
     });
   });
-
-//  if (!points[message.author.id]) points[message.author.id] = {
-//    points: 0,
-//    level: 0
-//  };
-//  let userData = points[message.author.id];
-//  userData.points++;
-
-//  let curLevel = Math.floor(0.1 * Math.sqrt(userData.points));
-//  if (curLevel > userData.level) {
-    // Level up!
-//    userData.level = curLevel;
-//    message.reply(`You've leveled up to level **${curLevel}**! Ain't that dandy?`);
-//  }
-
-//  fs.writeFile('./levelsys/levels.json', JSON.stringify(points), (err) =>{
-//    if (err) console.error(err);
-//  });
 
   let command = message.content.split(" ")[0];
   command = command.slice(secrets.BOT_PREFIX.length);
